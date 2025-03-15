@@ -1,12 +1,13 @@
-const express = require("express")
-let app = express()
+const express = require("express");
+let app = express();
 
+let bookRouter = require("../routes/book.route");
 
-
-
+app.use(express.json());
+app.use("/api/books", bookRouter);
 
 app.get("*", (req, res, next) => {
-    res.send("Working")
-})
+  res.send("Working");
+});
 
-module.exports = app
+module.exports = app;
