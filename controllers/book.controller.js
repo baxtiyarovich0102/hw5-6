@@ -13,7 +13,7 @@ let getBookById = async (req, res, next) => {
 
 let addBook = async (req, res, next) => {
   let data = JSON.parse(req.body.body);
-  data.image = "/uploads/" + req.file.filename;
+  data.image = "/uploads/books/" + req.file.filename;
 
   let book = await Book.create(data);
   res.status(201).json({ name: "book", book });
