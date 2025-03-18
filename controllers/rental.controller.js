@@ -15,7 +15,7 @@ let postRequest = async(req, res) => {
     data.bookId = req.params.bookId
 
     let request = await Rental.create(data)
-    res.status(200).json({message: "Success", request})
+    res.status(201).json({message: "Success", request})
 }
 
 
